@@ -54,6 +54,11 @@ class App < Sinatra::Base
     redirect '/'
   end
 
+  # If user clicks "Deny this request"
+  get '/auth/failure' do
+    redirect '/'
+  end
+
   helpers do
     def current_user
       @current_user ||= User.find(session[:user_id])  if session[:user_id]
