@@ -4,6 +4,7 @@ app = Sinatra.new do
   configure do
     set :sessions, true
     set :logging, true
+    set :views, './views'
   end
 
   configure(:development) do
@@ -12,7 +13,7 @@ app = Sinatra.new do
   end
 
   get '/' do
-    "It works!"
+    erb :index
   end
 end
 
