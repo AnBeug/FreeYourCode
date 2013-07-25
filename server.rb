@@ -4,6 +4,7 @@ app = Sinatra.new do
   configure do
     set :sessions, true
     set :logging, true
+    set :public_folder, Proc.new { "./public" }
     set :views, './views'
   end
 
