@@ -59,6 +59,11 @@ class App < Sinatra::Base
     redirect '/'
   end
 
+  get '/logout' do
+    session.clear
+    redirect '/'
+  end
+
   helpers do
     def current_user
       @current_user ||= User.find(session[:user_id])  if session[:user_id]

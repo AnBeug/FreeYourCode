@@ -1,6 +1,6 @@
 <h1>It works!</h1>
 <% if current_user %>
-  <p>Signed in as <b><%= current_user.nickname %></b>.
+  <p>Signed in as <b><%= current_user.nickname %></b>. <a href='/logout'>Logout</a>
 <% else %>
   <a class='btn' href='/auth/github'>Sign in with GitHub</a>
 <% end %>
