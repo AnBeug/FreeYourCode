@@ -13,6 +13,10 @@ app = Sinatra.new do
     set :show_exceptions, true
   end
 
+  configure(:production) do
+    require 'newrelic_rpm'
+  end
+
   get '/' do
     erb :index
   end
