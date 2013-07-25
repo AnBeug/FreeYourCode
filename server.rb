@@ -1,6 +1,6 @@
 require 'sinatra'
 
-app = Sinatra.new do
+class App < Sinatra::Base
   configure do
     set :sessions, true
     set :logging, true
@@ -24,4 +24,3 @@ app = Sinatra.new do
   end
 end
 
-app.run!
