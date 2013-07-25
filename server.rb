@@ -15,6 +15,8 @@ app = Sinatra.new do
 
   configure(:production) do
     require 'newrelic_rpm'
+    # Enable multiple Heroku dynos to share sessions
+    set :session_secret, ENV['SESSION_KEY']
   end
 
   get '/' do
