@@ -1,2 +1,6 @@
 <h1>It works!</h1>
-<a class='btn'><i class="icon-leaf"></i> Bootstrap test</a>
+<% if current_user %>
+  <p>Signed in as <b><%= current_user.nickname %></b>.
+<% else %>
+  <a class='btn' href='/auth/github'>Sign in with GitHub</a>
+<% end %>
